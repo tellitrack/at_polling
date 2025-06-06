@@ -63,5 +63,5 @@ for log in st.session_state.token_logs[:50]:
         if log['farmer']:
             st.markdown(f"⚠️ **FARMER détecté** : {log['nb_tokens']} tokens créés", unsafe_allow_html=True)
         if log["whitelist"]:
-            st.markdown(f"🥳🤞🏻 ** {log['twitter']} est dans la whitelist**", unsafe_allow_html=True)
+            st.markdown(f"✅⁉️ ** {log['twitter']} est dans la whitelist**", unsafe_allow_html=True)
         st.markdown("---")

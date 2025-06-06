@@ -39,6 +39,7 @@ if st.session_state.polling_active:
                 "name": tok.name,
                 "url": f"https://arena.trade/token/{tok.token_contract}",
                 "twitter": tok.twitter_handle,
+                "x_url": f"https://x.com/{tok.twitter_handle}",
                 "followers": tok.twitter_followers,
                 "market_cap": tok.market_cap_usd,
                 "bonding_curve": tok.bonding_curve,
@@ -52,7 +53,7 @@ for log in st.session_state.token_logs[:50]:
         st.markdown(f"""
 🪙 **{log['symbol']}** — *{log['name']}*  
 🔗 [Voir sur Arena]({log['url']})  
-👤 @{log['twitter']} — {log['followers']} followers  
+👤 @{log['twitter']} — {log['followers']} followers -> [Voir X account]({log['x_url']})   
 📈 Bonding Curve: **{log['bonding_curve']:.2f}%** — Market Cap: **${log['market_cap']:.2f}**
 """)
         if log['farmer']:

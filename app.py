@@ -2,6 +2,8 @@ import streamlit as st
 from api import ArenaAPI
 from streamlit_autorefresh import st_autorefresh
 
+from user_lists import whitelisted
+
 if 'polling_active' not in st.session_state:
     st.session_state.polling_active = False
 if 'seen_groups' not in st.session_state:
@@ -28,6 +30,7 @@ if st.session_state.polling_active:
             st.session_state.seen_groups[tok.group_id] = tok
             nb_tokens = 0
             is_farmer = False
+            is_in_whitelist = True if tok.twitter_handle in whitelisted else False
 
             if tok.twitter_handle:
                 created = arena.get_groups_plus("creator_twitter_handle", tok.twitter_handle)
@@ -44,6 +47,7 @@ if st.session_state.polling_active:
                 "market_cap": tok.market_cap_usd,
                 "bonding_curve": tok.bonding_curve,
                 "farmer": is_farmer,
+                "whitelist": is_in_whitelist,
                 "nb_tokens": nb_tokens
             })
 
@@ -59,3 +63,8 @@ for log in st.session_state.token_logs[:50]:
         if log['farmer']:
             st.markdown(f"⚠️ **FARMER détecté** : {log['nb_tokens']} tokens créés", unsafe_allow_html=True)
         st.markdown("---")
+
+        if log["whitelist"]:
+            st.markdown(f"🥳🤞🏻 ** {log['twitter']} est dans la whitelist**", unsafe_allow_html=True)
+            st.markdown("---")
+

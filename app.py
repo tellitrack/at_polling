@@ -1,7 +1,6 @@
 import streamlit as st
 from api import ArenaAPI
 from streamlit_autorefresh import st_autorefresh
-from streamlit_javascript import st_javascript
 
 from user_lists import whitelisted
 
@@ -68,8 +67,4 @@ for log in st.session_state.token_logs[:50]:
         if log["whitelist"]:
             st.markdown(f"🥳🤞🏻 ** {log['twitter']} est dans la whitelist**", unsafe_allow_html=True)
             st.markdown("---")
-            st_javascript("""
-                var audio = new Audio('https://www.soundjay.com/human/sounds/applause-2.mp3');
-                audio.play();
-            """)
 

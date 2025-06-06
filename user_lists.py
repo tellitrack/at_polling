@@ -1,6 +1,8 @@
 whitelisted = [
     "moneymorty",
     "dumbandnumbavax",
+    "ghost93_x",
+    "Arena_Devv",
     "dylanmints",
     "yellowcatdao",
     "AbstractResult",
@@ -120,7 +122,6 @@ whitelisted = [
     "Newports100",
     "imajcenus",
     "gloavax",
-    "lowcap_hunt3r",
     "lieferbrando",
     "0xemren",
     "smart4lec",

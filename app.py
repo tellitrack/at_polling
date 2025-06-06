@@ -57,7 +57,7 @@ for log in st.session_state.token_logs[:50]:
         st.markdown(f"""
 🪙 **{log['symbol']}** — *{log['name']}*  
 🔗 [Voir sur Arena]({log['url']})  
-👤 @{log['twitter']} — {log['followers']} followers -> [Voir X account]({log['x_url']})   
+👤 [@{log['twitter']}]({log['x_url']}) — {log['followers']} followers   
 📈 Bonding Curve: **{log['bonding_curve']:.2f}%** — Market Cap: **${log['market_cap']:.2f}**
 """)
         if log['farmer']:

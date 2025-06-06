@@ -69,7 +69,7 @@ for log in st.session_state.token_logs[:50]:
             st.markdown(f"🥳🤞🏻 ** {log['twitter']} est dans la whitelist**", unsafe_allow_html=True)
             st.markdown("---")
             st_javascript("""
-                var audio = new Audio('https://www.soundjay.com/buttons/sounds/button-3.mp3');
+                var audio = new Audio('https://www.soundjay.com/human/sounds/applause-2.mp3');
                 audio.play();
             """)
 

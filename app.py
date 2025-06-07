@@ -1,7 +1,7 @@
 import streamlit as st
 from api import ArenaAPI
 from streamlit_autorefresh import st_autorefresh
-from user_lists import whitelisted
+from user_lists import whitelisted, waiting_list
 
 st.set_page_config(
     page_title="Token Polling",
@@ -35,6 +35,8 @@ if st.session_state.polling_active:
             nb_tokens = 0
             is_farmer = False
             is_in_whitelist = True if tok.twitter_handle in whitelisted else False
+            is_in_waiting_list = True if tok.twitter_handle in waiting_list else False
+
 
             if tok.twitter_handle:
                 created = arena.get_groups_plus("creator_twitter_handle", tok.twitter_handle)
@@ -52,6 +54,7 @@ if st.session_state.polling_active:
                 "bonding_curve": tok.bonding_curve,
                 "farmer": is_farmer,
                 "whitelist": is_in_whitelist,
+                "waitinglist": is_in_waiting_list,
                 "nb_tokens": nb_tokens
             })
 
@@ -68,4 +71,7 @@ for log in st.session_state.token_logs[:50]:
             st.markdown(f"⚠️ **FARMER détecté** : {log['nb_tokens']} tokens créés", unsafe_allow_html=True)
         if log["whitelist"]:
             st.markdown(f"✅⁉️ ** {log['twitter']} est dans la whitelist**", unsafe_allow_html=True)
+        if log["waitinglist"]:
+            st.markdown(f"🥳🙏💡** {log['twitter']} est dans la waiting list**", unsafe_allow_html=True)
+
         st.markdown("---")

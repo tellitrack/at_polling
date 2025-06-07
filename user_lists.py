@@ -1,3 +1,10 @@
+
+waiting_list = [
+    "_0xIce",
+    "moneymorty",
+    "dumbandnumbavax",
+]
+
 whitelisted = [
     "moneymorty",
     "dumbandnumbavax",

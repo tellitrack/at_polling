@@ -3,6 +3,12 @@ waiting_list = [
     "_0xIce",
     "moneymorty",
     "dumbandnumbavax",
+    "0xMoonbags",
+    "0x7ama",
+    "JustnThePhotog",
+    "jasondesimone",
+    "BoredElonMusk",
+    "ghost93_x",
 ]
 
 whitelisted = [

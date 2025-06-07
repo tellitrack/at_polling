@@ -1,8 +1,12 @@
 import streamlit as st
 from api import ArenaAPI
 from streamlit_autorefresh import st_autorefresh
-
 from user_lists import whitelisted
+
+st.set_page_config(
+    page_title="Token Polling",
+    page_icon="⚔️",
+)
 
 if 'polling_active' not in st.session_state:
     st.session_state.polling_active = False
@@ -10,11 +14,6 @@ if 'seen_groups' not in st.session_state:
     st.session_state.seen_groups = {}
 if 'token_logs' not in st.session_state:
     st.session_state.token_logs = []
-
-st.set_page_config(
-    page_title="Token Polling",
-    page_icon="⚔️",
-)
 
 st.title("📡 Token Polling")
 

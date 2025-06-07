@@ -15,7 +15,7 @@ if 'seen_groups' not in st.session_state:
 if 'token_logs' not in st.session_state:
     st.session_state.token_logs = []
 
-st.title("📡 Token Polling")
+st.title("📡 Polling")
 
 col1, col2 = st.columns(2)
 if col1.button("▶️ START"):

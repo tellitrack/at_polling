@@ -1,6 +1,7 @@
 whitelisted = [
     "moneymorty",
     "dumbandnumbavax",
+    "combetek",
     "ghost93_x",
     "Arena_Devv",
     "dylanmints",
